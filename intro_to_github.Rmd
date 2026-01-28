@@ -15,3 +15,64 @@ ggplot(data=mtcars, aes(x=mpg))+
   labs(x="Miles per Gallon")
 ```
 
+section 2.3 
+```{r}
+## install.packages("palmerpenguins")
+library(palmerpenguins)
+library(tidyverse)
+theme_set(theme_minimal())
+penguins
+```
+Exercise 1. Make another plot of bill_length_mm with a different geom that is used for a single quantitative variable.
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm)) +
+  geom_histogram() 
+```
+
+
+Exercise 2. Create a plot of a quantitative and a categorical variable in the penguins data set.
+
+(side by side boxplot)
+```{r}
+ggplot(data=penguins,aes(x = species,y=bill_length_mm))+
+  geom_bar(position="dodge")
+```
+
+
+Exercise 3. Modify the frequency plot made with geom_freqpoly() to use colour in two different ways:
+
+a. change the colour of the line to any colour that R knows. A list of some colours can be found at this link.
+```{r}
+ggplot(data=penguins, aes(x=bill_length_mm))+ geom_freqpoly(colour="skyblue")
+
+ggplot(data=penguins, aes(x=bill_length_mm))+ geom_freqpoly(aes(colour=species))
+```
+
+
+b. add a colour aesthetic to make three different frequency lines, one for each species of penguin.
+```{r}
+
+```
+
+4. 
+Recall that aes() aesthetics specified within the ggplot() function directly are called global aesthetics because every other <GEOM> will use them (unless specifically overridden) while aes() specified within a particular <GEOM> are called local aesthetics because only that particular <GEOM> will use them.
+
+Modify the scatterplot and smoother so that
+
+a. the points are coloured by species, but there is only one smoother instead of three.
+
+```{r}
+ggplot(data=penguins, aes(x=bill_length_mm))
+```
+
+
+b. there are three different coloured smoothers (one for each species) but the points are all the same colour.
+
+5.
+Create two different graphs that differ only by 1 of the 7 grammar of graphics parameters. Then, show your two graphs (but not your code) to a partner and see if they can identify which graphics parameter has been modified.
+
+```{r}
+ggplot(data=penguins, aes(x=bill_length_mm, 
+```
+

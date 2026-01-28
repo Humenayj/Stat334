@@ -1,0 +1,28 @@
+---
+title: "coding Assessment 1"
+author: "JJ Humenay"
+format: 
+  html:
+    embed-resources: true
+---
+
+```{r}
+library(tidyverse)
+diamonds
+```
+
+1.
+```{r}
+ggplot(data=diamonds, aes(x=price)) +
+  geom_histogram() +
+  facet_wrap(~cut)
+```
+2. 
+```{r}
+ggplot(data=diamonds, aes(x=price)) +
+  geom_histogram() +
+  facet_wrap(~cut) +
+  theme(plot.background=element_rect("hotpink"),
+        panel.grid.major=element_line("green"))
+```
+
